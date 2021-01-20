@@ -16,8 +16,17 @@
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
         <label for="user-id"></label>
-        <input type="password" id="user-id" name="user-id" value="12345">
+        <input type="password" id="user-id" name="password">
         <button type="submit">Go There</button>
     </form>
+
+    <%
+        if (request.getMethod().equalsIgnoreCase("post")){
+            if (request.getParameter("username").equalsIgnoreCase("admin") &&
+            request.getParameter("password").equals("password")) {
+               response.sendRedirect("profile.jsp");
+            }
+        }
+    %>
 </body>
 </html>
