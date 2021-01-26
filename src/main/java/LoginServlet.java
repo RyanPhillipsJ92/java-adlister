@@ -26,10 +26,10 @@ public class LoginServlet extends HttpServlet {
         boolean validAttempt = (username.equals("user") && password.equals("password"));
 
 //        GETS OUR CURRENT SESSION
-        HttpSession session = request.getSession();
+
             if (validAttempt && username.equals("user")) {
-                session.setAttribute("user", true);
-                session.setAttribute("username", username);
+                request.getSession().setAttribute("user", true);
+                request.getSession().setAttribute("username", username);
                 response.sendRedirect("/profile");  //Linked to a servlet
 
             }//        IF LOGIN ATTEMPT FAILS REDIRECT TO LOGIN TO TRY AGAIN
