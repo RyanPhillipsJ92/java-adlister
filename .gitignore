@@ -2,4 +2,4 @@
 target/
 .idea/
 
-src/main/javva/dao/Config.java
+src/main/java/Config.java
